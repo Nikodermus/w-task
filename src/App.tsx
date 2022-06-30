@@ -1,5 +1,7 @@
 import "normalize.css";
 
+import ProviderManager from "./ProviderManager";
+
 export default function App() {
-  return <> Hey!</>;
+  return <ProviderManager>Hey!</ProviderManager>;
 }
