@@ -63,11 +63,14 @@ const BaseStyle = createGlobalStyle`
   }
 
   html, body, #root {
+    align-items: center;
+    background: var(--color-gray);
+    display: flex ;
+    justify-content: center;
     max-width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
     width: 100%;
-    background: var(--color-gray);
   }
 
   img,

@@ -1,22 +1,38 @@
-import { useQuery } from "react-query";
+import styled from "styled-components";
 
-import type { Schedule as ScheduleType } from "@/types/Schedule";
-import pseudoFetch from "@/utils/fetch";
+import { Schedule as ScheduleType } from "@/types/Schedule";
 
-import AsyncWrapper from "../Lib/AsyncWrapper";
+import IconClock from "../Icons/IconClock";
 
-const Schedule: React.FC = () => {
-  const query = useQuery<ScheduleType, Error>("todos", () =>
-    pseudoFetch({ time: 2000 })
-  );
+export interface ScheduleProps {
+  data: ScheduleType;
+}
 
+const Heading = styled.h1`
+  border-bottom: 2px solid var(--color-black);
+  font: var(--typography-title);
+  padding-bottom: var(--sizing-lg);
+`;
+
+const IconClockStyled = styled(IconClock)`
+  color: var(--color-gray-dark);
+  margin-right: var(--sizing-sm);
+  vertical-align: baseline;
+  width: var(--font-size-xl);
+`;
+
+const Schedule: React.FC<ScheduleProps> = ({ data }) => {
   return (
-    <AsyncWrapper query={query}>
-      <AsyncWrapper.Loading>loading...</AsyncWrapper.Loading>
-      <AsyncWrapper.Data>
-        {JSON.stringify(query.data, null, 4)}
-      </AsyncWrapper.Data>
-    </AsyncWrapper>
+    <>
+      <Heading>
+        <IconClockStyled></IconClockStyled>
+        Opening Hours
+      </Heading>
+
+      {Object.entries(data).map(([day, hours]) => (
+        <div key={day}>{day}</div>
+      ))}
+    </>
   );
 };
 

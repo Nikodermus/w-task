@@ -1,12 +1,12 @@
 import "normalize.css";
 
-import Schedule from "./components/Schedule/Schedule";
+import ScheduleWrapper from "./components/Schedule/ScheduleWrapper";
 import ProviderManager from "./ProviderManager";
 
 const App: React.FC = () => {
   return (
     <ProviderManager>
-      <Schedule></Schedule>
+      <ScheduleWrapper></ScheduleWrapper>
     </ProviderManager>
   );
 };
