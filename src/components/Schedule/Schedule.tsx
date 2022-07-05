@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-import { Schedule as ScheduleType } from "@/types/Schedule";
+import { Day, Schedule as ScheduleType } from "@/types/Schedule";
+import { getCurrentDayName, getWeek } from "@/utils/date.util";
 
 import IconClock from "../Icons/IconClock";
+import Hours from "./Hours";
 
 export interface ScheduleProps {
   data: ScheduleType;
@@ -22,6 +24,8 @@ const IconClockStyled = styled(IconClock)`
 `;
 
 const Schedule: React.FC<ScheduleProps> = ({ data }) => {
+  const today = getCurrentDayName();
+
   return (
     <>
       <Heading>
@@ -29,9 +33,16 @@ const Schedule: React.FC<ScheduleProps> = ({ data }) => {
         Opening Hours
       </Heading>
 
-      {Object.entries(data).map(([day, hours]) => (
-        <div key={day}>{day}</div>
-      ))}
+      <ul>
+        {getWeek("monday").map(day => (
+          <Hours
+            key={day}
+            day={day as Day}
+            schedule={data}
+            today={today}
+          ></Hours>
+        ))}
+      </ul>
     </>
   );
 };

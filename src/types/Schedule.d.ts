@@ -6,5 +6,6 @@ export interface HourSchedule {
 }
 
 export type Day = typeof days[number];
-
+export type Hour = { from: number; to: number };
 export type Schedule = Record<Day, Array<HourSchedule>>;
+export type WeekStart = "monday" | "sunday";

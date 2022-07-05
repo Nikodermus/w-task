@@ -12,3 +12,9 @@ export const getFollowingDayName = (day: Day) => {
   const index = days.indexOf(day);
   return days[(index + 1) % 7];
 };
+
+export const getWeek = (firstDay: "sunday" | "monday") => {
+  if (firstDay === "sunday") return days;
+
+  return days.slice(1).concat(days[0]);
+};

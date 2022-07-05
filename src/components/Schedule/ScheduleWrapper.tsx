@@ -1,9 +1,9 @@
 import { useQuery } from "react-query";
 import styled from "styled-components";
 
-import { toREM } from "@/style/styled.util";
 import type { Schedule as ScheduleType } from "@/types/Schedule";
-import pseudoFetch from "@/utils/fetch";
+import pseudoFetch from "@/utils/fetch.util";
+import { toREM } from "@/utils/styled.util";
 
 import AsyncWrapper from "../Lib/AsyncWrapper";
 import Schedule from "./Schedule";
@@ -11,8 +11,9 @@ import Schedule from "./Schedule";
 const Wrapper = styled.main`
   background: var(--color-white);
   border-radius: var(--border-radius-lg);
-  padding: var(--sizing-3xl) var(--sizing-2xl);
-  width: ${toREM(400)};
+  padding: var(--sizing-2xl);
+  padding-bottom: var(--sizing-3xl);
+  width: ${toREM(350)};
   box-shadow: 2px 2px 12px -4px var(--color-gray-dark);
     var(--sizing-sm) var(--color-gray-dark);
 `;

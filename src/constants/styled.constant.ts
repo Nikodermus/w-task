@@ -74,10 +74,10 @@ export const FONT_FAMILY = {
 } as const;
 
 export const TYPOGRAPHY_VARIANTS = {
-  body1: `400 16px/30px ${FONT_FAMILY.roboto}`,
-  body2: `500 16px/22px ${FONT_FAMILY.roboto}`,
-  caption: `700 12px/22px ${FONT_FAMILY.roboto}`,
-  title: `700 24px/16px ${FONT_FAMILY.roboto}`,
+  body1: `500 16px/22px ${FONT_FAMILY.roboto}`,
+  body2: `400 16px/22px ${FONT_FAMILY.roboto}`,
+  caption: `700 12px/16px ${FONT_FAMILY.roboto}`,
+  title: `700 24px/30px ${FONT_FAMILY.roboto}`,
 } as const;
 
 export const COLORS = {

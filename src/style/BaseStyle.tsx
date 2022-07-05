@@ -13,8 +13,11 @@ import {
   TRANSITION,
   TYPOGRAPHY_VARIANTS,
   Z_INDEX,
-} from "./styled.constant";
-import { createPlainVariables, createSizeVariables } from "./styled.util";
+} from "../constants/styled.constant";
+import {
+  createPlainVariables,
+  createSizeVariables,
+} from "../utils/styled.util";
 
 const BaseStyle = createGlobalStyle`
   :root {
@@ -71,6 +74,10 @@ const BaseStyle = createGlobalStyle`
     min-height: 100vh;
     overflow-x: hidden;
     width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6{
+    margin: 0
   }
 
   img,

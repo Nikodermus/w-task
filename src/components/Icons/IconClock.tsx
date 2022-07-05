@@ -4,7 +4,14 @@ const SVG = styled.svg``;
 
 const IconClock: React.FC = props => {
   return (
-    <SVG viewBox="0 0 48 48" {...props}>
+    <SVG
+      viewBox="0 0 48 48"
+      role="img"
+      aria-labelledby="title  desc"
+      {...props}
+    >
+      <title id="title">Clock</title>
+      <desc id="desc">Analogous clock representation</desc>
       <circle
         cx="24"
         cy="24"
