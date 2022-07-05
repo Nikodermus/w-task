@@ -7,7 +7,9 @@
   "wednesday": [],
   "thursday": [
     { "type": "open", "value": 36000 },
-    { "type": "close", "value": 64800 }
+    { "type": "close", "value": 64800 },
+    { "type": "open", "value": 72000 },
+    { "type": "close", "value": 79200 }
   ],
   "friday": [{ "type": "open", "value": 36000 }],
   "saturday": [

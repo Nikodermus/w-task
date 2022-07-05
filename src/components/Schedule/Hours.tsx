@@ -62,12 +62,12 @@ const Hours: React.FC<HourProps> = ({ day, schedule, today }) => {
                 <Hour hour={hour.from} day={day} />
                 {" – "}
                 <Hour hour={hour.to} day={day} />
-                {index !== daySchedule.length - 1 && ", "}
+                {index !== daySchedule.length - 1 && <span>{", "}</span>}
               </React.Fragment>
             ))}
           </StyledBody>
         ) : (
-          <StyledBody secondary={true} as="small">
+          <StyledBody secondary as="small">
             Closed
           </StyledBody>
         )}

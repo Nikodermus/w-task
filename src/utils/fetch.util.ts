@@ -1,6 +1,6 @@
 import { Schedule } from "@/types/Schedule";
 
-import mock from "../../__mocks__/response.mock.json";
+import mock from "../__mocks__/response.mock.json";
 
 export interface FetchOptions {
   fail: boolean;

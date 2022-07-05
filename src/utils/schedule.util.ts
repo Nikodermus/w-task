@@ -9,11 +9,14 @@ interface GetScheduleForDay {
 
 export const getScheduleForDay = ({ day, schedule }: GetScheduleForDay) => {
   const daySchedule = schedule[day];
-  const parsedSchedule = schedule[day].slice(
-    daySchedule.findIndex(({ type }) => type === "open")
-  );
+  const firstOpen = daySchedule.findIndex(({ type }) => type === "open");
 
-  if (parsedSchedule.at(-1)?.type === "open") {
+  if (firstOpen === -1) {
+    return [];
+  }
+  const parsedSchedule = schedule[day].slice(firstOpen);
+
+  if (parsedSchedule[parsedSchedule.length - 1]?.type === "open") {
     parsedSchedule.push(
       schedule[getFollowingDayName(day)]
         .reverse()
