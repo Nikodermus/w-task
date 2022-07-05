@@ -1,7 +1,13 @@
 import "normalize.css";
 
+import Schedule from "./components/Schedule/Schedule";
 import ProviderManager from "./ProviderManager";
 
-export default function App() {
-  return <ProviderManager>Hey!</ProviderManager>;
-}
+const App: React.FC = () => {
+  return (
+    <ProviderManager>
+      <Schedule></Schedule>
+    </ProviderManager>
+  );
+};
+export default App;

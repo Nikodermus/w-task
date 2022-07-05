@@ -1,3 +1,4 @@
+import ReactQuery from "./providers/ReactQuery";
 import BaseStyle from "./style/BaseStyle";
 
 export interface ProviderManagerProps {
@@ -9,7 +10,7 @@ const ProviderManager: React.FC<ProviderManagerProps> = ({ children }) => {
     <>
       <BaseStyle></BaseStyle>
 
-      {children}
+      <ReactQuery>{children}</ReactQuery>
     </>
   );
 };
