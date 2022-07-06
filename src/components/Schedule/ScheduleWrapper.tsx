@@ -6,6 +6,7 @@ import pseudoFetch from "@/utils/fetch.util";
 import { toREM } from "@/utils/styled.util";
 
 import AsyncWrapper from "../Lib/AsyncWrapper";
+import ErrorMessage from "../Lib/ErrorMessage";
 import Loader from "../Lib/Loader";
 import Schedule from "./Schedule";
 
@@ -20,7 +21,17 @@ const Wrapper = styled.main`
 `;
 
 const ScheduleWrapper: React.FC = () => {
-  const query = useQuery<ScheduleType, Error>("todos", () => pseudoFetch({}));
+  const query = useQuery<ScheduleType, Error>(
+    "todos",
+    () =>
+      pseudoFetch({
+        // Fail 1 out of 10 times
+        fail: Math.random() > 0.9,
+      }),
+    {
+      retry: false,
+    }
+  );
 
   return (
     <Wrapper>
@@ -32,6 +43,10 @@ const ScheduleWrapper: React.FC = () => {
         <AsyncWrapper.Data>
           <Schedule data={query.data as ScheduleType}></Schedule>
         </AsyncWrapper.Data>
+
+        <AsyncWrapper.Error>
+          <ErrorMessage message={query.error?.message}></ErrorMessage>
+        </AsyncWrapper.Error>
       </AsyncWrapper>
     </Wrapper>
   );

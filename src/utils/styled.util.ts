@@ -28,3 +28,5 @@ export const createPlainVariables = (
 
 export const toREM = (size: number): string =>
   `calc(${size} / var(--font-size-px) * 1rem)`;
+
+export const negative = (item: string) => `calc(${item} * -1)`;

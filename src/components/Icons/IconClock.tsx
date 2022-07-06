@@ -1,17 +1,13 @@
-import styled from "styled-components";
-
-const SVG = styled.svg``;
+import IconWrapper from "./IconWrapper";
 
 const IconClock: React.FC = props => {
   return (
-    <SVG
-      viewBox="0 0 48 48"
-      role="img"
-      aria-labelledby="title  desc"
+    <IconWrapper
       {...props}
+      desc="Analogous clock representation"
+      name="Clock"
+      viewBox="0 0 48 48"
     >
-      <title id="title">Clock</title>
-      <desc id="desc">Analogous clock representation</desc>
       <circle
         cx="24"
         cy="24"
@@ -30,7 +26,7 @@ const IconClock: React.FC = props => {
         strokeWidth="4"
       />
       <rect width="48" height="48" fill="none" />
-    </SVG>
+    </IconWrapper>
   );
 };
 

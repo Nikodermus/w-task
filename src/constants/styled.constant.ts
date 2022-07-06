@@ -82,9 +82,11 @@ export const TYPOGRAPHY_VARIANTS = {
 
 export const COLORS = {
   black: "#202125",
-  white: "#FFFFFF",
-  green: "#5BCB02",
-  grayLight: "#F8F8F8",
   gray: "#EEEEEE",
   grayDark: "#A1A2A4",
+  grayLight: "#F8F8F8",
+  green: "#5BCB02",
+  red: "#FEE5E2",
+  redDark: "#FCACA5",
+  white: "#FFFFFF",
 } as const;

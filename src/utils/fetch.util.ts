@@ -14,7 +14,8 @@ const pseudoFetch = (
   const options = {
     fail: false,
     response: mock as unknown as Schedule,
-    time: 500,
+    // Between 500ms and 2 seconds
+    time: Math.random() * 1500 + 500,
     ...fetchOptions,
   };
 
