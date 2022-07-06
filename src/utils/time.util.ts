@@ -16,7 +16,7 @@ export const secondsToTime = (seconds: number) => {
 
   const date = dayjs(new Date(0, 0, 0, hours, minutes));
 
-  return date.format("h A");
+  return date.format(`h${minutes ? `:mm` : ""} A`);
 };
 
 interface SecondsToISO {

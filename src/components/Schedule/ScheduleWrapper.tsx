@@ -11,9 +11,9 @@ import Schedule from "./Schedule";
 const Wrapper = styled.main`
   background: var(--color-white);
   border-radius: var(--border-radius-lg);
-  padding: var(--sizing-2xl);
+  width: minmax(${toREM(300)}, ${toREM(500)});
   padding-bottom: var(--sizing-3xl);
-  width: ${toREM(350)};
+  padding: var(--sizing-2xl);
   box-shadow: 2px 2px 12px -4px var(--color-gray-dark);
     var(--sizing-sm) var(--color-gray-dark);
 `;

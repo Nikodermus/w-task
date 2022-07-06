@@ -16,6 +16,7 @@ const StyledLi = styled.li`
   align-items: center;
   border-bottom: 1px solid var(--color-gray);
   display: flex;
+  gap: var(--sizing-xl);
   justify-content: space-between;
   list-style: none;
   padding: var(--sizing-sm) 0;
@@ -24,6 +25,7 @@ const StyledLi = styled.li`
 const StyledDiv = styled.div`
   align-items: baseline;
   display: inline-flex;
+  flex: 0 0 auto;
   gap: var(--sizing-sm);
 `;
 const StyledHeading = styled.h2`
@@ -36,11 +38,16 @@ const StyledSubtitle = styled.h3`
   text-transform: uppercase;
 `;
 
+const StyledSpan = styled.span`
+  white-space: nowrap;
+`;
+
 const StyledBody = styled.p<{
   secondary?: boolean;
 }>`
   color: var(--color-${({ secondary }) => (secondary ? "gray-dark" : "black")});
   font: var(--typography-body2);
+  text-align: right;
 `;
 
 const Hours: React.FC<HourProps> = ({ day, schedule, today }) => {
@@ -59,9 +66,12 @@ const Hours: React.FC<HourProps> = ({ day, schedule, today }) => {
           <StyledBody>
             {daySchedule.map((hour, index) => (
               <React.Fragment key={hour.from}>
-                <Hour hour={hour.from} day={day} />
-                {" – "}
-                <Hour hour={hour.to} day={day} />
+                <StyledSpan>
+                  <Hour hour={hour.from} day={day} />
+                  {" – "}
+                  <Hour hour={hour.to} day={day} />
+                </StyledSpan>
+
                 {index !== daySchedule.length - 1 && <span>{", "}</span>}
               </React.Fragment>
             ))}

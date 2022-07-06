@@ -17,16 +17,19 @@ describe("secondsToObject", () => {
 describe("secondsToTime", () => {
   it("formats seconds after midnight to a simple hour", () => {
     expect(secondsToTime(3600)).toBe("1 AM");
-    expect(secondsToTime(7260)).toBe("2 AM");
+    expect(secondsToTime(7200)).toBe("2 AM");
   });
 
   it("uses a 12-hour clock format", () => {
     expect(secondsToTime(43_200)).toBe("12 PM");
     expect(secondsToTime(72_000)).toBe("8 PM");
   });
-});
 
-("2022-07-05T08:00:00.564Z");
+  it("shows minutes only when necessary", () => {
+    expect(secondsToTime(5400)).toBe("1:30 AM");
+    expect(secondsToTime(9900)).toBe("2:45 AM");
+  });
+});
 
 describe("secondsToISO", () => {
   it("gets date ISO from seconds", () => {
