@@ -1,89 +1,55 @@
-# React TypeScript template with Vite
+# Opening Hours
 
-This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/) boilerplate built with [Vite](https://vitejs.dev).
+> by **Nicolas M. Pardo**
 
-## What's inside?
+Vite template with React, TypeScript, and Styled Components.
 
-- [ReactJS](https://reactjs.org)
-- [Vite](https://vitejs.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Jest](https://jestjs.io)
-- [Testing Library](https://testing-library.com)
-- [ESLint](https://eslint.org)
-- [Prettier](https://prettier.io)
-- [Polyfills](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy#readme)
+---
 
-## Getting started
+## 🚶🏽‍♂️ Getting Started
 
-1. Create the project.
-
-   ```bash
-   npx degit fabien-ml/react-ts-vite-template my-app
-   ```
-
-2. Access the project directory.
-
-   ```bash
-   cd my-app
-   ```
-
-3. Initialize a git repository.
-
-   ```bash
-   git init
-   ```
-
-4. Install dependencies.
-
-   ```bash
-   npm install
-   ```
-
-5. Start dev server with hot reload at http://localhost:3000.
-   ```bash
-   npm run dev
-   ```
-
-## Recommended VS Code extensions
-
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-## Other commands
-
-### Lint commands
+This project requires Node v14+ and Yarn.
 
 ```bash
-npm run lint
+git clone https://github.com/Nikodermus/w-task
+cd w-task
+yarn
 ```
 
-### Build commands
+---
+
+## 🏃🏽‍♂️ Run the project
+
+You can run `yarn dev`, or `yarn serve` (for a production version) and open [localhost:3000](http://localhost:3000) to view it in the browser.
+
+---
+
+## 🧪 Testing
+
+This project uses `jest` as test runner and `react-testing-library` to mount React components and do component testing.
 
 ```bash
-npm run build
+yarn test:unit:ci
 ```
 
-### Run the app in production mode at http://localhost:3000.
+---
 
-```bash
-npm run serve
-```
+## 📚 Notes
 
-### Test commands
+- You can modify [ScheduleWrapper.tsx](src/components/Schedule/ScheduleWrapper.tsx), inside `pseudoFetch({})` to change the behavior of the information load to:
 
-- Run unit tests and watch
-  ```bash
-  npm run test:unit
-  ```
-- Run unit tests with coverage
-  ```bash
-  npm run test:unit:coverage
-  ```
-- Run e2e tests
-  ```bash
-  npm run test:e2e
-  ```
+  - Make it forcefully fail `{fail: boolean}`. (By default it fails 1 out 10 times the info is lodaded).
+  - Set a delay in milliseconds to delay the loading of the information. `{time: number}` (By default it loads after ~1 second).
+  - Change the information displayed in the schedule. `{data: Schedule}`. (By default it displays the following information inside [response.mock.json](src/__mocks__/response.mock.json), you can change it there as well).
 
-## License
+- This project uses a set of utilities to create a [CSS Variables Design System](https://gorillalogic.com/blog/building-design-systems-with-css-variables/), using as source [styled.constant.ts](src/constants/styled.constant.ts), use your browser to see all the generated variables.
 
-This project is licensed under the MIT License.
+---
+
+## 👩🏽‍💼 License & Attribution
+
+- [Original template](https://github.com/fabien-ml/react-ts-vite-template) by **Fabien MARIE-LOUISE**.
+
+- [Styled Component System](https://github.com/Nikodermus/gatsby-styled-components-sanity) by **Nicolas M. Pardo**
+
+MIT License
