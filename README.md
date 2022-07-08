@@ -2,7 +2,7 @@
 
 > by **Nicolas M. Pardo**
 
-Vite template with React, TypeScript, and Styled Components.
+Vite template with React, TypeScript, and Styled Components. See it [live](https://w-task.netlify.app/)
 
 ---
 
