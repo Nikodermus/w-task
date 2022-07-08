@@ -3,4 +3,4 @@
 
 npx lint-staged
 yarn typecheck
-yarn test:unit:ci
+yarn test:unit:ci --onlyChanged
